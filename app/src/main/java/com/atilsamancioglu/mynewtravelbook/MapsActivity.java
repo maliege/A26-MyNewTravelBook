@@ -181,6 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     address += addressList.get(0).getThoroughfare();
 
                     if (addressList.get(0).getSubThoroughfare() != null) {
+                        address += " ";
                         address += addressList.get(0).getSubThoroughfare();
                     }
                 }
@@ -193,7 +194,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         mMap.addMarker(new MarkerOptions().title(address).position(latLng));
-        Toast.makeText(getApplicationContext(), "New Place OK!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "New Place OK! - "+address, Toast.LENGTH_SHORT).show();
 
         MainActivity.names.add(address);
         MainActivity.locations.add(latLng);
